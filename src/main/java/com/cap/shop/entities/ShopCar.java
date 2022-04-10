@@ -1,4 +1,5 @@
 package com.cap.shop.entities;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -14,7 +15,9 @@ public class ShopCar extends StockCar{
 	private float totalPrice;
 	private float monthlyAmount;
 	private float tva;
-	private Date deliveryDate;
+	//private Date deliveryDate;
+	//SimpleDateFormat deliveryDate;
+	
 	@OneToOne(cascade = CascadeType.MERGE)
 	private Orders order;
 	
@@ -36,11 +39,27 @@ public class ShopCar extends StockCar{
 	public void setTva(float tva) {
 		this.tva = tva;
 	}
+	/*
 	public Date getDeliveryDate() {
 		return deliveryDate;
 	}
 	public void setDeliveryDate(Date deliveryDate) {
 		this.deliveryDate = deliveryDate;
+	}*/
+	
+	/*public SimpleDateFormat getDeliveryDate() {
+		return deliveryDate;
 	}
+	public void setDeliveryDate(SimpleDateFormat deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}*/
+	public Orders getOrder() {
+		return order;
+	}
+	public void setOrder(Orders order) {
+		this.order = order;
+	}
+	
+	
 
 }

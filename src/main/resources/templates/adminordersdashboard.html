@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EmployeSalaires</title>
+<title>AdminCommandes</title>
 <link type="text/css" rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}">
 
 </head>
@@ -22,7 +22,10 @@
      <th>Email Client</th>
      <th>Mot de passe Client</th>
      <th>Num CB Client</th>
-      <th>Voitures Commandées</th>
+      <th>Id Voiture Commandée</th>
+      <th>Modèle voiture Commandée</th>
+      <th>Marque voiture Commandée</th>
+      <th>Prix voiture Cmd</th>
 
 </tr>
 
@@ -35,6 +38,11 @@
 <td th:text="${order.customer.emailAddress}"></td>
 <td th:text="${order.customer.passWord}"></td>
 <td th:text="${order.customer.paymentCardNumber}"></td>
+<td th:text="${order.orderedCar.id}"></td>
+<td th:text="${order.orderedCar.model}"></td>
+<td th:text="${order.orderedCar.brand}"></td>
+<td th:text="${order.orderedCar.totalPrice}"></td>
+
 
 
 </tr>

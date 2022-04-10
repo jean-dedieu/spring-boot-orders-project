@@ -1,6 +1,10 @@
 package com.cap.shop.entities;
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 
 
@@ -11,6 +15,8 @@ public class ShopCar extends StockCar{
 	private float monthlyAmount;
 	private float tva;
 	private Date deliveryDate;
+	@OneToOne(cascade = CascadeType.MERGE)
+	private Orders order;
 	
 	public float getTotalPrice() {
 		return totalPrice;
@@ -36,9 +42,5 @@ public class ShopCar extends StockCar{
 	public void setDeliveryDate(Date deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
-	
-	
-	
-	
 
 }

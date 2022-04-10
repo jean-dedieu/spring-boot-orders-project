@@ -1,15 +1,20 @@
 package com.cap.shop.entities;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public abstract class StockCar {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String model;
 	private String brand;
 	private String color;
+
 	public int getId() {
 		return id;
 	}

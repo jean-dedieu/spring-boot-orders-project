@@ -11,7 +11,7 @@ import com.cap.shop.entities.Orders;
 
 
 public interface OrdersRepository extends JpaRepository<Orders, Integer>{
-	//public Employe findByNom(String nom);
+	
 	
 	public Orders findByCustomerId(int customerId);
 	
@@ -19,5 +19,7 @@ public interface OrdersRepository extends JpaRepository<Orders, Integer>{
 	//public List<Orders> listOrders(@Param("vmin")float min,@Param("vmax") float max);
 	public List<Orders> listOrders(@Param("vmin")int min,@Param("vmax") int max);
 		
+	
+	
 	
 }

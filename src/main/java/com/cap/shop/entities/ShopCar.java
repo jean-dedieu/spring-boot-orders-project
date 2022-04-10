@@ -1,8 +1,7 @@
 package com.cap.shop.entities;
-
 import java.util.Date;
-
 import javax.persistence.Entity;
+
 
 
 @Entity
@@ -12,9 +11,6 @@ public class ShopCar extends StockCar{
 	private float monthlyAmount;
 	private float tva;
 	private Date deliveryDate;
-	
-	
-	
 	
 	public float getTotalPrice() {
 		return totalPrice;

@@ -4,7 +4,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class StockCar {
+public abstract class StockCar {
 	@Id
 	private int id;
 	private String model;

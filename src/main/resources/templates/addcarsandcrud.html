@@ -15,80 +15,67 @@
 	rel="stylesheet">
 </head>
 <body>
-<div class="container mt-3">
+	<div class="container mt-3">
 
-<h4 class="text-center"> Page Admin toutes les voitures avec pagination</h4>
-<!-- /save1 c'est la value de notre méthode saveEmp1() en EmployeController -->
-<form method="post" class="form-group" action="/save">
-<label>Identifiant</label>
-<input type="number" name="id" class="form-control">
-<label>Model</label>
-<input type="text" name="model" class="form-control">
-<label>Marque</label>
-<input type="text" name="brand" class="form-control">
-<label>Couleur</label>
-<input type="text" name="color" class="form-control">
-<label>Prix Total</label>
-<input type="number" name="totalPrice" class="form-control">
-<label>Par mois</label>
-<input type="number" name="monthlyAmount" class="form-control">
-<label>TVA</label>
-<input type="number" name="tva" class="form-control">
-
-<input type="submit" value="Save" class="btn btn-success">
-</form>
+		<h4 class="text-center">Page Admin toutes les voitures avec
+			pagination</h4>
+		<!-- /save1 c'est la value de notre méthode saveEmp1() en EmployeController -->
+		<form method="post" class="form-group" action="/save">
+			<label>Identifiant</label> <input type="number" name="id"
+				class="form-control"> <label>Model</label> <input
+				type="text" name="model" class="form-control"> <label>Marque</label>
+			<input type="text" name="brand" class="form-control"> <label>Couleur</label>
+			<input type="text" name="color" class="form-control"> <label>Prix
+				Total</label> <input type="number" name="totalPrice" class="form-control">
+			<label>Par mois</label> <input type="number" name="monthlyAmount"
+				class="form-control"> <label>TVA</label> <input
+				type="number" name="tva" class="form-control"> <input
+				type="submit" value="Save" class="btn btn-success">
+		</form>
 
 
-<h3>Avec ThymeLeaf</h3>
+		<h3>Ajouter Une Voiture</h3>
 
-<!-- utilise model.addAttribute("employe", new Employe()); -->
-<!--  <form method="post" class="form-group" th:action="@{save2}" th:object="${employe}">
-<label>Matricule</label>
-<input type="number" name="mat" class="form-control" th:field="*{mat}">
-<label>Nom</label>
-<input type="text" name="nom" class="form-control" th:field="*{nom}">
-<label>Salaire</label>
-<input type="number" name="sal" class="form-control" th:field="*{sal}">
-<input type="submit" value="Save" class="btn btn-success">
-</form>-->
+		
 
 
-<table class="table" border="1">
-<tr class=table>
-<th>Id</th>
-<th>Modèle</th>
-<th>Marque</th>
-<th>Couleur</th>
-<th>Prix total</th>
-<th>Par mois</th>
-<th>TVA</th>
-<th>Action1</th>
-<th>Action2</th>
+		<table class="table" border="1">
+			<tr class=table>
+				<th>Id</th>
+				<th>Modèle</th>
+				<th>Marque</th>
+				<th>Couleur</th>
+				<th>Prix total</th>
+				<th>Par mois</th>
+				<th>TVA</th>
+				<th>Action1</th>
+				<th>Action2</th>
 
 
-</tr>
+			</tr>
 
 
-<tr th:each="car:${data.content}" class=table-info>
+			<tr th:each="car:${data.content}" class=table-info>
 
-<td th:text="${car.id}"></td>
-<td th:text="${car.model}"></td>
-<td th:text="${car.brand}"></td>
-<td th:text="${car.color}"></td>
-<td th:text="${car.totalPrice}"></td>
-<td th:text="${car.monthlyAmount}"></td>
-<td th:text="${car.tva}"></td>
-<td><a th:href="@{delete(id=${car.id})}" class="btn btn-danger">Delete</a></td>
-<td class="btn btn-warning" >Update</td>
+				<td th:text="${car.id}"></td>
+				<td th:text="${car.model}"></td>
+				<td th:text="${car.brand}"></td>
+				<td th:text="${car.color}"></td>
+				<td th:text="${car.totalPrice}"></td>
+				<td th:text="${car.monthlyAmount}"></td>
+				<td th:text="${car.tva}"></td>
+				<td><a th:href="@{delete(id=${car.id})}" class="btn btn-danger">Delete</a></td>
+				<td class="btn btn-warning">Update</td>
 
 
-</tr>
-</table>
-<ul class="nav nav-pills">
-<li class="nav-item" th:each="i:${#numbers.sequence(0,data.totalPages-1)}">
-<a th:text="${i+1}" th:href="@{/addcar(page=${i})}" class="nav-link" th:classappend="${currentPage}==${i}?'active':''"></a>
-</li>
-</ul>
-</div>
+			</tr>
+		</table>
+		<ul class="nav nav-pills">
+			<li class="nav-item"
+				th:each="i:${#numbers.sequence(0,data.totalPages-1)}"><a
+				th:text="${i+1}" th:href="@{/addcar(page=${i})}" class="nav-link"
+				th:classappend="${currentPage}==${i}?'active':''"></a></li>
+		</ul>
+	</div>
 </body>
 </html>

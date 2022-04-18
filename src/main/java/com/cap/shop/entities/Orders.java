@@ -21,47 +21,47 @@ public class Orders {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private Date orderDate;
-	//private SimpleDateFormat orderDate;
-	@ManyToOne(cascade = CascadeType.MERGE)//ALL cascade to MERGE
+	// private SimpleDateFormat orderDate;
+	@ManyToOne(cascade = CascadeType.MERGE) // ALL cascade to MERGE
 	private Customer customer;
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.MERGE)//Bug OneToMany
 	private ShopCar orderedCar;
-	
+
+	// getters and setters
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public Customer getCustomer() {
 		return customer;
 	}
+
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	
+
 	public Date getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
 	}
+
 	public ShopCar getOrderedCar() {
 		return orderedCar;
 	}
+
 	public void setOrderedCar(ShopCar orderedCar) {
 		this.orderedCar = orderedCar;
 	}
 	/*
-	public SimpleDateFormat getOrderDate() {
-		return orderDate;
-	}
-	public void setOrderDate(SimpleDateFormat orderDate) {
-		this.orderDate = orderDate;
-	}
-	*/
-	
-	
-
+	 * public SimpleDateFormat getOrderDate() { return orderDate; } public void
+	 * setOrderDate(SimpleDateFormat orderDate) { this.orderDate = orderDate; }
+	 */
 
 }

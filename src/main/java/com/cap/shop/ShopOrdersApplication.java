@@ -1,12 +1,10 @@
 package com.cap.shop;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 
 import com.cap.shop.dao.CustomerRepository;
@@ -15,6 +13,7 @@ import com.cap.shop.dao.ShopCarRepository;
 import com.cap.shop.entities.Customer;
 import com.cap.shop.entities.Orders;
 import com.cap.shop.entities.ShopCar;
+
 // extends SpringBootServletInitializer
 @SpringBootApplication
 public class ShopOrdersApplication {
@@ -34,7 +33,7 @@ public class ShopOrdersApplication {
 		car1.setTotalPrice(400000);
 		car1.setMonthlyAmount(10000);
 		car1.setTva(8000);
-		//car1.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car1.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car2 = new ShopCar();
 		car2.setId(1);
@@ -44,7 +43,7 @@ public class ShopOrdersApplication {
 		car2.setTotalPrice(800000);
 		car2.setMonthlyAmount(20000);
 		car2.setTva(56000);
-		//car2.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car2.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car3 = new ShopCar();
 		car3.setId(2);
@@ -54,7 +53,7 @@ public class ShopOrdersApplication {
 		car3.setTotalPrice(1000000);
 		car3.setMonthlyAmount(200000);
 		car3.setTva(80000);
-		//car3.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car3.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car4 = new ShopCar();
 		car4.setId(3);
@@ -64,7 +63,7 @@ public class ShopOrdersApplication {
 		car4.setTotalPrice(2000000);
 		car4.setMonthlyAmount(20000);
 		car4.setTva(90000);
-		//car4.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car4.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car5 = new ShopCar();
 		car5.setId(4);
@@ -74,7 +73,7 @@ public class ShopOrdersApplication {
 		car5.setTotalPrice(780000);
 		car5.setMonthlyAmount(210000);
 		car5.setTva(100000);
-		//car5.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car5.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		// second cars simulation to be 10
 
@@ -86,7 +85,7 @@ public class ShopOrdersApplication {
 		car6.setTotalPrice(4000000);
 		car6.setMonthlyAmount(100000);
 		car6.setTva(80000);
-		//car6.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car6.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car7 = new ShopCar();
 		car7.setId(6);
@@ -96,7 +95,7 @@ public class ShopOrdersApplication {
 		car7.setTotalPrice(800000);
 		car7.setMonthlyAmount(20000);
 		car7.setTva(56000);
-		//car7.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car7.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car8 = new ShopCar();
 		car8.setId(7);
@@ -106,7 +105,7 @@ public class ShopOrdersApplication {
 		car8.setTotalPrice(7000000);
 		car8.setMonthlyAmount(100000);
 		car8.setTva(60000);
-		//car8.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car8.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car9 = new ShopCar();
 		car9.setId(8);
@@ -115,7 +114,7 @@ public class ShopOrdersApplication {
 		car9.setTotalPrice(7000000);
 		car9.setMonthlyAmount(80000);
 		car9.setTva(50000);
-		//car9.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car9.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car10 = new ShopCar();
 		car10.setId(9);
@@ -125,7 +124,7 @@ public class ShopOrdersApplication {
 		car10.setTotalPrice(780000);
 		car10.setMonthlyAmount(210000);
 		car10.setTva(100000);
-		//car10.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car10.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car11 = new ShopCar();
 		car11.setId(10);
@@ -135,7 +134,7 @@ public class ShopOrdersApplication {
 		car11.setTotalPrice(980000);
 		car11.setMonthlyAmount(110000);
 		car11.setTva(800000);
-		//car11.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car11.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		ShopCar car12 = new ShopCar();
 		car12.setId(11);
@@ -145,7 +144,7 @@ public class ShopOrdersApplication {
 		car12.setTotalPrice(680000);
 		car12.setMonthlyAmount(410000);
 		car12.setTva(630000);
-		//car12.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
+		// car12.setDeliveryDate(new SimpleDateFormat("yyyy-MM-dd"));
 
 		// end simulation
 		// carRepository.save(car1);
@@ -174,7 +173,7 @@ public class ShopOrdersApplication {
 		// test order
 		// Create order
 		Orders order1 = new Orders();
-		
+
 		order1.setOrderDate(new Date());
 
 		Orders order2 = new Orders();
@@ -192,7 +191,6 @@ public class ShopOrdersApplication {
 		// order1.setClient(customer2);
 
 		order1.setCustomer(customer2);
-		
 
 		order2.setCustomer(customer1);
 		order2.setOrderedCar(car10);
@@ -201,8 +199,7 @@ public class ShopOrdersApplication {
 		orderRepository.save(order2);
 		order1.setOrderedCar(car12);
 		orderRepository.save(order1);
-        
-		
+
 		Customer customer3 = new Customer();
 
 		customer2.setId(3);
@@ -211,16 +208,7 @@ public class ShopOrdersApplication {
 		customer2.setEmailAddress("jean@test.com");
 		customer2.setPassWord("BED+-LIT12354zbar?!%");
 		customer2.setPaymentCardNumber("8243 4252 4242 4202");
-		
-		/*
-		Orders order3 = new Orders();
-		order3.setId(3);
-		order3.setOrderedCar(car11);
-		order3.setOrderDate(new Date());
-		order3.setCustomer(customer3);
-		
-		customerRepository.save(customer3);
-		orderRepository.save(order3);*/
+
 		// loop through orders
 		List<Orders> listOrders = orderRepository.findAll();
 
@@ -230,13 +218,6 @@ public class ShopOrdersApplication {
 					+ o.getCustomer().getPassWord() + "\t" + o.getCustomer().getPaymentCardNumber());
 
 		}
-
-		/*
-		 * List<ShopCar> listCars = carRepository.findAll();
-		 * order1.setCarsList(listCars);
-		 */
-
-		// eventRepository.save(event);
 
 	}
 

@@ -15,12 +15,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cap.shop.dao.ShopCarRepository;
 import com.cap.shop.entities.ShopCar;
 
-
-
 @Controller
 public class ShopCarsController {
 	@Autowired
 	ShopCarRepository carRepository;
+
+	/**
+	 * shop
+	 * 
+	 * @param model
+	 * @return shop with cars
+	 */
 	@RequestMapping(value = "/")
 	public String shop(Model model) {
 		List<ShopCar> listC = carRepository.findAll();
@@ -28,9 +33,14 @@ public class ShopCarsController {
 		model.addAttribute("listCars", listC);
 		// on retourne la page avec les données
 		return "shop";
-		
+
 	}
-	
+
+	/**
+	 * 
+	 * @param model
+	 * @return admincarsdashboard
+	 */
 	@RequestMapping(value = "/shopadmin")
 	public String shopAdmin(Model model) {
 		List<ShopCar> listC = carRepository.findAll();
@@ -38,18 +48,18 @@ public class ShopCarsController {
 		model.addAttribute("listCars", listC);
 		// on retourne la page avec les données
 		return "admincarsdashboard";
-		
+
 	}
+
+	/**
+	 * add a new car and CRUD cars
+	 * 
+	 * @param model
+	 * @param page
+	 * @return addcarsandcrud paginated with add car form and cars table for CRUD
+	 */
 	@GetMapping(value = "/addcar")
 	public String showPage(Model model, @RequestParam(defaultValue = "0") int page) {
-		/*
-		 * model.addAttribute("data",employeRepository.findAll(new QPageRequest(page,
-		 * 2))); fonctionne avec cette dépendance <dependency>
-		 * <groupId>com.querydsl</groupId> <artifactId>querydsl-jpa</artifactId>
-		 * <version>5.0.0</version> </dependency>
-		 */
-		// model.addAttribute("data",employeRepository.findAll(new QPageRequest(page,
-		// 2)));
 
 		Pageable pageable = PageRequest.of(page, 4);
 		model.addAttribute("data", carRepository.findAll(pageable));
@@ -58,20 +68,32 @@ public class ShopCarsController {
 		return "addcarsandcrud";
 
 	}
+
+	/**
+	 * save a new car
+	 * 
+	 * @param model
+	 * @param shopCar
+	 * @return
+	 */
 	@PostMapping(value = "/save")
-	public String saveCar(Model model,ShopCar shopCar) {
+	public String saveCar(Model model, ShopCar shopCar) {
 		carRepository.save(shopCar);
 		return showPage(model, 0);
-		//return "addcarsandcrud";
+		// return "addcarsandcrud";
 	}
-	
-	
-	@RequestMapping(value="/delete")
-	public String deleteCar(Model model,int id) {
+
+	/**
+	 * delete a car
+	 * 
+	 * @param model
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value = "/delete")
+	public String deleteCar(Model model, int id) {
 		carRepository.deleteById(id);
 		return showPage(model, 0);
 	}
-	
-	
 
 }

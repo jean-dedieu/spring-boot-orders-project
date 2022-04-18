@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+<html>
+<header>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="details.css" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+</header>
+    <body>
+        <div class="container">
+        	<div class="row">
+               <div class="col-xs-4 item-photo">
+                    <img style="max-width:100%;" src="https://www.anmodelcars.com/12528-large_default/lamborghini-aventador-s-roadster-blu-aegir-118-make-up-eidolon.jpg"
+											alt="Card image cap">
+                </div>
+                <div class="col-xs-5" style="border:0px solid gray">
+                   <h3 th:text="${car.brand}"></h3>  
+                    <h3 th:text="${car.model}"></h3>    
+                   
+                    <!-- Precios -->
+                    <h4 class="title-price"><strong>Prix Total</strong></h4>
+                    <h5 style="margin-top:0px;" th:text="${car.totalPrice}"></h5>
+        
+                    <!-- Detalles especificos del producto -->
+                    <div class="section">
+                        <h6 class="title-attr" style="margin-top:15px;"><strong>Couleur</strong></h6>
+                         <div>
+                            <div class="attr2"  th:text="${car.color}"></div>
+                          
+                        </div>                    
+                       
+                    </div>
+                    <div class="section" style="padding-bottom:5px;">
+                        <h6 class="title-attr"><strong>TVA</strong></h6>                    
+                        <div>
+                            <div class="attr2"  th:text="${car.tva}"></div>
+                          
+                        </div>
+                    </div>   
+                   <form action="/addToCart" method="POST">
+													<input type="hidden" name="id" th:value="${car.id}" /> <input
+														type="number" min="1" max="2000" value="1" name="quantity"
+														class="form-control" placeholder="quantité" />
+													<button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Ajout au Panier</button>
+												</form>              
+        
+                    <!-- Botones de compra -->
+                    <div class="section" style="padding-bottom:20px;">
+                        
+                        <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Ajout au liste de souhaits</a></h6>
+                    </div>                                        
+                </div>                              
+        
+                <div class="col-xs-9">
+                    <ul class="menu-items">
+                        <li class="active">Plus de détails</li>
+                        <li>Garanti</li>
+                        <li>Vendeur</li>
+                        <li>Envoi</li>
+                    </ul>
+                    <div style="width:100%;border-top:1px solid silver">
+                        <p style="padding:15px;">
+                            <small>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum
+                             convallis nulla in maximus. Duis non velit et sem facilisis tempor.
+                              Nam lobortis ipsum non nisi auctor, ac rhoncus massa tempor. Aenean 
+                              lacus mi, finibus vitae pellentesque gravida, mollis eget enim. Donec 
+                              ac mollis tellus. Nulla urna elit, faucibus a 
+                            felis eget, ullamcorper eleifend quam. In eleifend dolor et orci dignissim, non
+                            </small>
+                        </p>
+                        <strong>
+                            <ul>
+                                <li>ullamcorper eleifend quam. In eleifend dolor et orci dignissim</li>
+                                   <li>ullamcorper eleifend quam. In eleifend dolor et orci dignissim</li>
+                                      <li>ullamcorper eleifend quam. In eleifend dolor et orci dignissim</li>
+                                         <li>ullamcorper eleifend quam. In eleifend dolor et orci dignissim</li>
+                                            <li>ullamcorper eleifend quam. In eleifend dolor et orci dignissim</li>
+                               
+                            </ul>  
+                        </strong>
+                    </div>
+                </div>		
+            </div>
+        </div>        
+    </body>
+</html>
